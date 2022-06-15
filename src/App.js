@@ -1,4 +1,5 @@
 import "./App.css";
+import MainDash from "./components/MainDash/MainDash";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <section className="App">
       <div className="AppGlass">
         <Sidebar></Sidebar>
-        <div></div>
+        <MainDash></MainDash>
         <div></div>
       </div>
     </section>

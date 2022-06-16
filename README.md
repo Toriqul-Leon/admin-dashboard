@@ -6,3 +6,4 @@ Library and framework
 - Framer Motion
 - React Circular Progressbar
 - React Unicons
+- React ApexCharts

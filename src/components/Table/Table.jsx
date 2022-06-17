@@ -19,49 +19,44 @@ const rows = [
   createData("Pegasus 101", 18908421, "2 March 2022", "Delivered"),
 ];
 
-export default function BasicTable() {
-  const makeStyle = (status) => {
-    if (status === "Approved") {
-      return {
-        background: "rgb(145 254 159 / 47%)",
-        color: "green",
-      };
-    } else if (status === "Pending") {
-      return {
-        background: "#ffadad8f",
-        color: "red",
-      };
-    } else if (status === "Delivered") {
-      return {
-        background: "#59bfff",
-        color: "white",
-      };
-    }
-  };
-  return (
-    <div>
-      <h3>Recent Orders</h3>
+const makeStyle = (status) => {
+  if (status === "Approved") {
+    return {
+      background: "rgb(145 254 159 / 47%)",
+      color: "green",
+    };
+  } else if (status === "Pending") {
+    return {
+      background: "#ffadad8f",
+      color: "red",
+    };
+  } else {
+    return {
+      background: "#59bfff",
+      color: "white",
+    };
+  }
+};
 
+export default function BasicTable() {
+  return (
+    <div className="Table">
+      <h3>Recent Orders</h3>
       <TableContainer
         component={Paper}
-        style={{
-          boxShadow: "0px 13px 20px 0px #80808029",
-        }}
+        style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
       >
-        <Table
-          sx={{ minWidth: 650, borderRadius: "0.7rem", "& td": { border: 0 } }}
-          aria-label="simple table"
-        >
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Product</TableCell>
               <TableCell align="left">Tracking ID</TableCell>
-              <TableCell align="left">Data</TableCell>
+              <TableCell align="left">Date</TableCell>
               <TableCell align="left">Status</TableCell>
               <TableCell align="left"></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody style={{ color: "white" }}>
             {rows.map((row) => (
               <TableRow
                 key={row.name}
@@ -77,8 +72,8 @@ export default function BasicTable() {
                     {row.status}
                   </span>
                 </TableCell>
-                <TableCell className="details" align="left">
-                  Detail
+                <TableCell align="left" className="Details">
+                  Details
                 </TableCell>
               </TableRow>
             ))}

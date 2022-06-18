@@ -7,11 +7,13 @@ const RightSide = () => {
   return (
     <div className="RightSide">
       <div>
-        <h3>Updates</h3>
+        <h3 style={{ marginBottom: "1rem", marginTop: "1rem" }}>Updates</h3>
         <Updates></Updates>
       </div>
       <div>
-        <h3>Customer Review</h3>
+        <h3 style={{ marginBottom: "1rem", marginTop: "1rem" }}>
+          Customer Review
+        </h3>
         <Reviews></Reviews>
       </div>
     </div>
